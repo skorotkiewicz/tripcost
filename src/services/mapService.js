@@ -19,7 +19,7 @@ export const geocodeAddress = async (address) => {
     };
 
     const response = await axios.get(
-      `/api/openstreetmap/search?${encodeQueryParams(params)}`,
+      `api/openstreetmap/search?${encodeQueryParams(params)}`,
     );
 
     if (response.data && response.data.length > 0) {
@@ -63,7 +63,7 @@ export const getRoute = async (start, destination, waypoint = null) => {
 
     // Get route from OSRM
     const response = await axios.get(
-      `/api/osrm/route/v1/driving/${waypointsStr}?overview=full&geometries=geojson`,
+      `api/osrm/route/v1/driving/${waypointsStr}?overview=full&geometries=geojson`,
     );
 
     if (response.data?.routes && response.data.routes.length > 0) {
