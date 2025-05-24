@@ -17,6 +17,11 @@
 
     a {
       color: $card-background;
+      text-decoration: underline;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 

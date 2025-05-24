@@ -15,7 +15,22 @@ const Footer = () => {
             >
               Project OSRM
             </a>{" "}
-            for route calculations and OpenStreetMap
+            for route calculations and{" "}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.openstreetmap.org/"
+            >
+              OpenStreetMap
+            </a>{" "}
+            ,{" "}
+            <a
+              href="https://github.com/skorotkiewicz/tripcost"
+              target="_blank"
+              rel="noreferrer"
+            >
+              OpenSource
+            </a>
           </p>
         </div>
       </div>
