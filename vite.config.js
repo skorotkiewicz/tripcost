@@ -9,7 +9,7 @@ export default defineConfig({
   base: "/tripcost/",
   server: {
     proxy: {
-      "/api/openstreetmap": {
+      "api/openstreetmap": {
         target: "https://nominatim.openstreetmap.org",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/openstreetmap/, ""),
@@ -19,7 +19,7 @@ export default defineConfig({
           });
         },
       },
-      "/api/osrm": {
+      "api/osrm": {
         target: "https://router.project-osrm.org",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/osrm/, ""),
