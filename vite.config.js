@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-const USER_AGENT = "TripCostCalculator/1.0";
+// const USER_AGENT = "TripCostCalculator/1.0";
 
 // https://vitejs.dev/config/
 export default defineConfig({

@@ -3,14 +3,17 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./Map.scss";
+import markerIcon2x from "../../assets/images/marker-icon-2x.png";
+import markerIcon from "../../assets/images/marker-icon.png";
+import markerShadow from "../../assets/images/marker-shadow.png";
 
 // Fix for default marker icons in Leaflet with React
+// biome-ignore lint/performance/noDelete: <explanation>
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
 });
 
 // Component to fit map to route bounds
