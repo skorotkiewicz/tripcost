@@ -12,6 +12,7 @@ export default defineConfig({
       "api/openstreetmap": {
         target: "https://nominatim.openstreetmap.org",
         changeOrigin: true,
+        secure: false,
         rewrite: (path) => path.replace(/^\/api\/openstreetmap/, ""),
         configure: (proxy, _options) => {
           proxy.on("proxyReq", (proxyReq, _req, _res) => {
@@ -22,6 +23,7 @@ export default defineConfig({
       "api/osrm": {
         target: "https://router.project-osrm.org",
         changeOrigin: true,
+        secure: false,
         rewrite: (path) => path.replace(/^\/api\/osrm/, ""),
         configure: (proxy, _options) => {
           proxy.on("proxyReq", (proxyReq, _req, _res) => {
