@@ -16,10 +16,10 @@ const FuelPriceDisplay = ({
     onCustomPriceChange(Number.parseFloat(value) || 0);
   };
 
-  const handleFuelTypeSelect = (type) => {
-    setShowCustomPrice(false);
-    onSelectFuelType(type);
-  };
+  // const handleFuelTypeSelect = (type) => {
+  //   setShowCustomPrice(false);
+  //   onSelectFuelType(type);
+  // };
 
   const handleCustomPriceClick = () => {
     setShowCustomPrice(true);
@@ -32,7 +32,7 @@ const FuelPriceDisplay = ({
     <div className="fuel-price-display">
       <h3>Current Fuel Prices</h3>
       <div className="fuel-types">
-        {fuelPrices.map((fuel) => (
+        {/* {fuelPrices.map((fuel) => (
           <div
             key={fuel.type}
             className={`fuel-type ${selectedFuelType === fuel.type ? "selected" : ""}`}
@@ -45,7 +45,7 @@ const FuelPriceDisplay = ({
               <div className="selected-indicator" />
             )}
           </div>
-        ))}
+        ))} */}
 
         <div
           className={`fuel-type custom-price ${selectedFuelType === "custom" ? "selected" : ""}`}
