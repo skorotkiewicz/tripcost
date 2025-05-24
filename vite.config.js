@@ -7,30 +7,30 @@ const USER_AGENT = "TripCostCalculator/1.0";
 export default defineConfig({
   plugins: [react()],
   base: "/tripcost/",
-  server: {
-    proxy: {
-      "api/openstreetmap": {
-        target: "https://nominatim.openstreetmap.org",
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api\/openstreetmap/, ""),
-        configure: (proxy, _options) => {
-          proxy.on("proxyReq", (proxyReq, _req, _res) => {
-            proxyReq.setHeader("User-Agent", USER_AGENT);
-          });
-        },
-      },
-      "api/osrm": {
-        target: "https://router.project-osrm.org",
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api\/osrm/, ""),
-        configure: (proxy, _options) => {
-          proxy.on("proxyReq", (proxyReq, _req, _res) => {
-            proxyReq.setHeader("User-Agent", USER_AGENT);
-          });
-        },
-      },
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     "/api/openstreetmap": {
+  //       target: "https://nominatim.openstreetmap.org",
+  //       changeOrigin: true,
+  //       secure: false,
+  //       rewrite: (path) => path.replace(/^\/api\/openstreetmap/, ""),
+  //       configure: (proxy, _options) => {
+  //         proxy.on("proxyReq", (proxyReq, _req, _res) => {
+  //           proxyReq.setHeader("User-Agent", USER_AGENT);
+  //         });
+  //       },
+  //     },
+  //     "/api/osrm": {
+  //       target: "https://router.project-osrm.org",
+  //       changeOrigin: true,
+  //       secure: false,
+  //       rewrite: (path) => path.replace(/^\/api\/osrm/, ""),
+  //       configure: (proxy, _options) => {
+  //         proxy.on("proxyReq", (proxyReq, _req, _res) => {
+  //           proxyReq.setHeader("User-Agent", USER_AGENT);
+  //         });
+  //       },
+  //     },
+  //   },
+  // },
 });
