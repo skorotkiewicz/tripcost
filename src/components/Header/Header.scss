@@ -1,0 +1,43 @@
+@use "../../styles/_variables" as *;
+@use "../../styles/_mixins" as *;
+
+.header {
+  background-color: $primary-color;
+  color: white;
+  padding: $spacing-2 0;
+  box-shadow: $shadow-md;
+
+  &__content {
+    @include flex(row, space-between, center);
+  }
+
+  &__logo {
+    @include flex(column, center, flex-start);
+
+    h1 {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-bold;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+  }
+
+  &__tagline {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-light;
+    margin-top: calc($spacing-1 / 2);
+    opacity: 0.9;
+  }
+
+  @include mobile {
+    padding: $spacing-1 0;
+
+    &__logo h1 {
+      font-size: $font-size-xl;
+    }
+
+    &__tagline {
+      font-size: $font-size-xs;
+    }
+  }
+}

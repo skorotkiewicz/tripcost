@@ -1,0 +1,82 @@
+@use "../../styles/_variables" as *;
+@use "../../styles/_mixins" as *;
+
+.route-form {
+  @include card;
+  margin-bottom: $spacing-3;
+  width: 100%;
+
+  form {
+    @include flex(column, flex-start, stretch);
+    gap: $spacing-2;
+  }
+
+  .form-group {
+    @include flex(column, flex-start, stretch);
+    position: relative;
+
+    label {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      margin-bottom: calc($spacing-1 / 2);
+      color: $text-secondary;
+    }
+
+    input {
+      @include input-field;
+      height: 2.5rem;
+    }
+  }
+
+  .waypoint-group {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: -$spacing-2;
+      width: 2px;
+      background-color: $primary-light;
+      z-index: 1;
+    }
+
+    &::before {
+      top: -$spacing-1;
+      height: $spacing-1;
+    }
+
+    &::after {
+      bottom: -$spacing-1;
+      height: $spacing-1;
+    }
+  }
+
+  .form-actions {
+    @include flex(row, flex-end, center);
+    gap: $spacing-2;
+    margin-top: $spacing-1;
+  }
+
+  .btn-primary {
+    @include button-primary;
+    padding: $spacing-1 $spacing-3;
+  }
+
+  .btn-secondary {
+    @include button-outline;
+  }
+
+  @include mobile {
+    padding: $spacing-2;
+
+    .form-actions {
+      @include flex(column, center, stretch);
+      gap: $spacing-1;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

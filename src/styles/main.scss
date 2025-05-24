@@ -1,0 +1,83 @@
+@use "./_variables" as *;
+@use "./_mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-primary;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-2;
+
+  @include mobile {
+    padding: 0 $spacing-1;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: $spacing-1;
+}
+.mb-2 {
+  margin-bottom: $spacing-2;
+}
+.mb-3 {
+  margin-bottom: $spacing-3;
+}
+.mb-4 {
+  margin-bottom: $spacing-4;
+}
+
+.mt-1 {
+  margin-top: $spacing-1;
+}
+.mt-2 {
+  margin-top: $spacing-2;
+}
+.mt-3 {
+  margin-top: $spacing-3;
+}
+.mt-4 {
+  margin-top: $spacing-4;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,66 @@
+@use "sass:color";
+@use "./styles/_variables" as *;
+@use "./styles/_mixins" as *;
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: $spacing-3 0;
+}
+
+.app-section {
+  margin-bottom: $spacing-4;
+
+  .section-title {
+    @include heading-2;
+    color: $primary-dark;
+    text-align: center;
+    margin-bottom: $spacing-1;
+  }
+
+  .section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto $spacing-4;
+    color: $text-secondary;
+  }
+}
+
+.app-content {
+  display: flex;
+  gap: $spacing-3;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .left-column {
+    flex: 1;
+
+    @include desktop {
+      max-width: 350px;
+    }
+  }
+
+  .right-column {
+    flex: 2;
+  }
+}
+
+.error-message {
+  background-color: rgba($error-color, 0.1);
+  border-left: 4px solid $error-color;
+  padding: $spacing-2;
+  margin-bottom: $spacing-3;
+  border-radius: $border-radius-md;
+
+  p {
+    color: color.scale($error-color, $lightness: -10%);
+    margin: 0;
+  }
+}
