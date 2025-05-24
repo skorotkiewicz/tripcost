@@ -18,7 +18,8 @@
         "useExhaustiveDependencies": "off"
       },
       "a11y": {
-        "useKeyWithClickEvents": "off"
+        "useKeyWithClickEvents": "off",
+        "noAutofocus": "off"
       },
       "suspicious": {
         "noExplicitAny": "off",

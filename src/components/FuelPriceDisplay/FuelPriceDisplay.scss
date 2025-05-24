@@ -37,6 +37,19 @@
       background-color: rgba($primary-color, 0.1);
       border: 1px solid $primary-color;
     }
+
+    &.custom-price {
+      .custom-price-input {
+        @include input-field;
+        width: 100px;
+        height: 36px;
+        text-align: center;
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        color: $primary-dark;
+        margin: $spacing-1 0;
+      }
+    }
   }
 
   .fuel-name {

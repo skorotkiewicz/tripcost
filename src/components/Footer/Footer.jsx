@@ -6,7 +6,17 @@ const Footer = () => {
       <div className="container">
         <div className="footer__content">
           <p>&copy; {new Date().getFullYear()} TripCost Calculator</p>
-          <p>Using OpenStreetMap for route calculations</p>
+          <p>
+            Using{" "}
+            <a
+              href="https://project-osrm.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Project OSRM
+            </a>{" "}
+            for route calculations and OpenStreetMap
+          </p>
         </div>
       </div>
     </footer>

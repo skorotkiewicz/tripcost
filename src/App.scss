@@ -14,7 +14,8 @@ main {
 }
 
 .app-section {
-  margin-bottom: $spacing-4;
+  // margin-bottom: $spacing-4;
+  margin: $spacing-4;
 
   .section-title {
     @include heading-2;

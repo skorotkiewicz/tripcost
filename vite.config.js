@@ -6,6 +6,7 @@ const USER_AGENT = "TripCostCalculator/1.0";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "/tripcost/",
   server: {
     proxy: {
       "/api/openstreetmap": {
